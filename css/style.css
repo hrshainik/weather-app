@@ -1,0 +1,75 @@
+body {
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
+    url(../img/pattern.webp);
+  background-attachment: fixed;
+  letter-spacing: .2em;
+  font-size: .8em;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+}
+
+.text-center {
+  color: #fff;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 540px;
+  margin: 3rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90vw;
+    margin: 1.5rem;
+  }
+}
+
+.icon {
+  position: relative;
+  top: -50px;
+  border-radius: 100vh;
+  width: 100px;
+  margin-bottom: -50px;
+}
+
+.change-loaction {
+  position: relative;
+}
+
+.form {
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid hsl(208, 7%, 75%);
+  font-family: inherit;
+  font-size: 1.2rem;
+  position: relative;
+  z-index: 1;
+  color: hsl(208, 7%, 85%);
+  font-family: inherit;
+}
+
+.form:focus {
+  outline: none;
+}
+
+.form:focus+label {
+  transform: translateY(-1.6rem) scale(0.85);
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.2rem;
+  padding-left: .1rem;
+  transition: transform 250ms ease;
+  transform-origin: left;
+  color: hsl(208, 7%, 75%);
+}
+
+.card {
+  border: none;
+}
