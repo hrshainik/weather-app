@@ -1,21 +1,21 @@
-const key = "WQvs2TtsK5IZJ0p1Hukk4oo62pJweNWV";
+const key = "caf7d782595c174daf258d23e0b84145";
 
-const getWeather = async (id) => {
-  const base = "https://dataservice.accuweather.com/currentconditions/v1/";
-  const query = `${id}?apikey=${key}`;
+// const getWeather = async (id) => {
+//   const base = "https://api.openweathermap.org/data/2.5/weather";
+//   const query = `?id=${id}&appid=${key}`;
+
+//   const response = await fetch(`${base}${query}`);
+//   const data = await response.json();
+
+//   return data;
+// };
+
+const getCityWeather = async (city) => {
+  const base = "https://api.openweathermap.org/data/2.5/weather";
+  const query = `?q=${city}&appid=${key}`;
 
   const response = await fetch(`${base}${query}`);
   const data = await response.json();
 
-  return data[0];
-};
-
-const getCity = async (city) => {
-  const base = "https://dataservice.accuweather.com/locations/v1/cities/search";
-  const query = `?apikey=${key}&q=${city}`;
-
-  const response = await fetch(`${base}${query}`);
-  const data = await response.json();
-
-  return data[0];
+  return data;
 };

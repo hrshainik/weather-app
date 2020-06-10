@@ -5,30 +5,31 @@ const time = document.querySelector(".time");
 const icon = document.querySelector(".icon img");
 
 const updateUI = (data) => {
-  const { cityDetails, weather } = data;
+  const { cityDetails } = data;
+  console.log(cityDetails);
 
   // update details template
   details.innerHTML = `
-  <h5 class="my-3">${cityDetails.EnglishName}</h5>
-  <div class="my-3">${weather.WeatherText}</div>
+  <h5 class="my-3">${cityDetails.name}</h5>
+  <div class="my-3">${cityDetails.weather[0].main}</div>
   <div class="display-4 my-4">
-    <span>${weather.Temperature.Metric.Value}</span>
-    <span>&deg;C</span>
+  <span>${cityDetails.main.temp}</span>
+  <span>&deg;C</span>
   </div>
   `;
 
   // update th night/day image & icon
-  const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
-  icon.setAttribute("src", iconSrc);
+  // const iconSrc = `img/icons/.svg`;
+  // icon.setAttribute("src", iconSrc);
 
-  let timeSrc = null;
-  if (weather.IsDayTime) {
-    timeSrc = "img/day.svg";
-  } else {
-    timeSrc = "img/night.svg";
-  }
+  // let timeSrc = null;
+  // if (weather.IsDayTime) {
+  //   timeSrc = "img/day.svg";
+  // } else {
+  //   timeSrc = "img/night.svg";
+  // }
 
-  time.setAttribute("src", timeSrc);
+  // time.setAttribute("src", timeSrc);
 
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
@@ -36,12 +37,13 @@ const updateUI = (data) => {
 };
 
 const updateCity = async (city) => {
-  const cityDetails = await getCity(city);
-  const weather = await getWeather(cityDetails.Key);
+  const cityDetails = await getCityWeather(city);
+  // const weather = await getWeather("2643743");
+  // console.log(weather);
 
   return {
     cityDetails,
-    weather,
+    // weather,
   };
 };
 
