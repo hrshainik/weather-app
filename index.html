@@ -6,24 +6,39 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400&display=swap"
       rel="stylesheet"
+      media="screen"
     />
     <title>Weather App</title>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="description"
+      content="Find the most current and reliable weather forecast."
+    />
+    <meta
+      name="keywords"
+      content="weather app, weather forecast, weather-app, api-projects, hrsshainik"
+    />
+    <meta name="author" content="Habibur Rahman" />
+    <link
+      rel="shortcut icon"
+      href="img/favicon.png"
+      type="image/x-icon"
+      media="screen"
+    />
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
   </head>
   <body>
     <div class="container mx-auto">
       <h1 class="text-center my-8">Weather App</h1>
       <form action="#" class="change-loaction my-4 text-center text-muted">
-        <input type="text" name="city" class="form" />
+        <input type="text" name="city" class="form" id="city" />
         <label for="city">Enter a location...</label>
       </form>
 
       <div class="card shadow-lg rounded d-none">
-        <img src="" alt="placeholder image" class="time card-img-top" />
+        <img src="" alt="day or night image" class="time card-img-top" />
         <div class="icon bg-light mx-auto text-center">
-          <img src="" alt="icon" />
+          <img src="" alt="weather icon" />
         </div>
         <div class="text-muted text-uppercase text-center details">
           <h5 class="my-3">City Name</h5>
@@ -36,7 +51,7 @@
       </div>
     </div>
 
-    <script src="js/forecast.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/forecast.js" async></script>
+    <script src="js/app.js" async></script>
   </body>
 </html>
