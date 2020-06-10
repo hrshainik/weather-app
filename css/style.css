@@ -1,7 +1,7 @@
 body {
   background: hsl(209, 24%, 27%);
   background-image: linear-gradient(to right bottom, rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
-    url(../img/pattern.webp);
+    url(../img/pattern.png);
   background-attachment: fixed;
   letter-spacing: .2em;
   font-size: .8em;
@@ -32,7 +32,9 @@ body {
   top: -50px;
   border-radius: 100vh;
   width: 100px;
+  padding: 1rem;
   margin-bottom: -50px;
+  background: #fff;
 }
 
 .change-loaction {
@@ -71,6 +73,20 @@ label {
   color: hsl(208, 7%, 75%);
 }
 
-.card {
-  border: none;
+.temp {
+  cursor: pointer;
+}
+
+.opacity {
+  animation: anim 350ms ease;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

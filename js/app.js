@@ -3,6 +3,7 @@ const card = document.querySelector(".card");
 const details = document.querySelector(".details");
 const time = document.querySelector(".time");
 const icon = document.querySelector(".icon img");
+const unit = document.querySelector(".display-4");
 
 const updateUI = (data) => {
   const { cityDetails } = data;
@@ -19,31 +20,29 @@ const updateUI = (data) => {
   `;
 
   // update th night/day image & icon
-  // const iconSrc = `img/icons/.svg`;
-  // icon.setAttribute("src", iconSrc);
+  const iconSrc = `img/${cityDetails.weather[0].icon}.svg`;
+  icon.setAttribute("src", iconSrc);
 
-  // let timeSrc = null;
-  // if (weather.IsDayTime) {
-  //   timeSrc = "img/day.svg";
-  // } else {
-  //   timeSrc = "img/night.svg";
-  // }
+  let timeSrc = null;
+  if (cityDetails.weather[0].icon.includes("d")) {
+    timeSrc = "img/day.jpg";
+  } else {
+    timeSrc = "img/night.jpg";
+  }
 
-  // time.setAttribute("src", timeSrc);
+  time.setAttribute("src", timeSrc);
 
   if (card.classList.contains("d-none")) {
     card.classList.remove("d-none");
+    card.classList.add("opacity");
   }
 };
 
 const updateCity = async (city) => {
   const cityDetails = await getCityWeather(city);
-  // const weather = await getWeather("2643743");
-  // console.log(weather);
 
   return {
     cityDetails,
-    // weather,
   };
 };
 
